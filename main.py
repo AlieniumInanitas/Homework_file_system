@@ -1,5 +1,3 @@
-from pprint import pprint
-
 class CookBook:
     """Наполнить словарь данными из переданного файла"""
     def __init__ (self):
@@ -21,7 +19,6 @@ class CookBook:
                     else:
                         recipe.append(line)
                 self.__add_recipe(recipe)
-
 
     def __add_recipe(self, recipe:list):
         self.cook_book.setdefault(recipe[0].strip(), [])
@@ -61,4 +58,4 @@ class IngredientCounter:
 reciptes = CookBook()
 reciptes.load_recipe('recipes.txt')
 recipte_two = IngredientCounter(reciptes)
-print(recipte_two.get_shop_list_by_dishes(['Омлет', 'Фахитос'], 6))
+recipte_two.get_shop_list_by_dishes(['Омлет', 'Фахитос'], 6)
